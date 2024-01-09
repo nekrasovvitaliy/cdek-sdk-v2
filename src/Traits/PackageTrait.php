@@ -14,6 +14,13 @@ use AntistressStore\CdekSDK2\Entity\Requests\Item;
 trait PackageTrait
 {
     /**
+     * Уникальный номер упаковки в ИС СДЭК 
+     *
+     * @var string
+     */
+    protected $package_id;
+
+    /**
      * Номер упаковки.
      *
      * @var string
@@ -61,6 +68,20 @@ trait PackageTrait
      * @var Item[]
      */
     protected $items;
+
+    /**
+     * Устанавливает уникальный номер упаковки в ИС СДЭК.
+     *
+     * @param string $packageId Уникальный номер упаковки в ИС СДЭК
+     *
+     * @return self
+     */
+    public function setPackageId(string $packageId)
+    {
+        $this->package_id = $packageId;
+
+        return $this;
+    }
 
     /**
      * Устанавливает номер упаковки.
