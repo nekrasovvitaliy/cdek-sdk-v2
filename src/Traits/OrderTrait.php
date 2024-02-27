@@ -9,6 +9,7 @@
 
 namespace AntistressStore\CdekSDK2\Traits;
 
+use AntistressStore\CdekSDK2\Entity\Responses\DeliveryDetailResponse;
 use AntistressStore\CdekSDK2\Entity\Requests\{Contact, Money, Seller, Threshold};
 
 trait OrderTrait
@@ -96,6 +97,11 @@ trait OrderTrait
      * @var Contact
      */
     protected $recipient;
+
+	/**
+	 * @var DeliveryDetailResponse
+	 */
+	protected $delivery_detail;
 
     /**
      * Получить параметр - ключ разработчика.

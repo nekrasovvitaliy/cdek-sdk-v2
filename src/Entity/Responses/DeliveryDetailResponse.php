@@ -9,19 +9,50 @@
 
 namespace AntistressStore\CdekSDK2\Entity\Responses;
 
+/**
+ * @since 1.0.0
+ */
 class DeliveryDetailResponse extends Source
 {
-    /** @var string - Дата доставки */
+	/**
+	 * @var float $delivery_sum Стоимость услуги доставки (по тарифу)
+	 *
+	 * @since 1.0.0
+	 */
+	protected $delivery_sum;
+
+    /**
+	 * @var string - Дата доставки
+	 *
+	 * @since 1.0.0
+	 */
     protected $date;
-    /** @var string - Получатель при доставке */
+
+    /**
+	 * @var string - Получатель при доставке
+	 *
+	 * @since 1.0.0
+	 */
     protected $recipient_name;
-    /** @var float - Сумма наложенного платежа, которую взяли с получателя, в валюте страны получателя с учетом частичной доставки */
+
+    /**
+	 * @var float - Сумма наложенного платежа, которую взяли с получателя, в валюте страны получателя с учетом частичной доставки
+	 *
+	 * @since 1.0.0
+	 */
     protected $payment_sum;
-    /** @var array - Тип оплаты наложенного платежа получателем */
+
+    /**
+	 * @var array - Тип оплаты наложенного платежа получателем
+	 *
+	 * @since 1.0.0
+	 */
     protected $payment_info;
 
     /**
      * Получает параметр - date.
+	 *
+	 * @since 1.0.0
      */
     public function getDate()
     {
@@ -30,6 +61,8 @@ class DeliveryDetailResponse extends Source
 
     /**
      * Получает параметр - recipient_name.
+	 *
+	 * @since 1.0.0
      */
     public function getRecipientName()
     {
@@ -38,6 +71,8 @@ class DeliveryDetailResponse extends Source
 
     /**
      * Получает параметр - payment_sum.
+	 *
+	 * @since 1.0.0
      */
     public function getPaymentSum()
     {
@@ -46,9 +81,21 @@ class DeliveryDetailResponse extends Source
 
     /**
      * Получает параметр - payment_info.
+	 *
+	 * @since 1.0.0
      */
     public function getPaymentInfo()
     {
         return $this->payment_info;
     }
+
+	/**
+	 * @return float
+	 *
+	 * @since 1.0.0
+	 */
+	public function getDeliverySum(): float
+	{
+		return $this->delivery_sum;
+	}
 }
